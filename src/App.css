@@ -1,1 +1,33 @@
+body {
+    background: #f5eada;
+}
+.user {
+    border: 2px solid grey;
+    width: 250px;
+    height: 500px;
+    overflow: scroll;
+    padding: 10px;
+    background: rgba(194, 238, 199, 0.69);
+}
+
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 10px;
+}
+
+.post {
+    border: 2px solid grey;
+    width: 200px;
+    padding: 8px;
+    background: #ecaa92;
+}
+
+.posts {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
 
