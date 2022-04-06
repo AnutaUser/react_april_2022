@@ -5,11 +5,11 @@ const Comment = ({comment}) => {
     const {id, name, email, body} = comment;
 
     return (
-        <div>
+        <div className={'comment'}>
             <p>Id: {id}</p>
             <p>Name: {name}</p>
             <p>Email: {email}</p>
-            <p>Body: {body}</p>body
+            <p>Body: {body}</p>
         </div>
     );
 };

@@ -17,6 +17,14 @@ body {
     row-gap: 10px;
 }
 
+.userAddress {
+    margin-left: 20px;
+}
+
+.userAddressGeo {
+    margin-left: 40px;
+}
+
 .post {
     border: 2px solid grey;
     width: 200px;
@@ -31,3 +39,15 @@ body {
     row-gap: 10px;
 }
 
+.comment {
+    width: 200px;
+    border: 2px solid grey;
+    background: #ecaee9;
+}
+
+.comments {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 10px;
+}
