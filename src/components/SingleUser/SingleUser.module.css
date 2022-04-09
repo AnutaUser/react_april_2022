@@ -1,0 +1,31 @@
+.singleUser {
+    border: 2px solid #a55f5f;
+    padding: 0 10px;
+    background: #ecafaf;
+}
+
+p{
+    margin: 5px;
+}
+
+h3 {
+    margin: 10px;
+}
+
+h4 {
+    margin: 8px;
+}
+
+.singleUserAddress, .singleUserCompany {
+    margin-left: 20px;
+}
+
+.singleUserAddressGeo {
+    margin-left: 40px;
+}
+
+.singleUserBtn {
+    background: #a55f5f;
+    border-radius: 5px;
+    margin-left: 42%;
+}
