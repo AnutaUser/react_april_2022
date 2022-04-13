@@ -7,7 +7,7 @@ const carValidator = Joi.object({
     //     'string.max': 'Поле model може містити максимум 20 символів'
     // }),
 
-    model: Joi.string().regex(/^[a-zA-Zа-яА-ЯїЇьіІ]{1, 20}$/).required().messages({ //регулярка
+    model: Joi.string().regex(/^[a-zA-Zа-яА-ЯїЇьіІ]{1, 20}$/).required().messages({     //регулярка
         'string.pattern.base': 'Тільки букви min 1 символ, max 20.'
     }),
 
