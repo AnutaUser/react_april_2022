@@ -10,10 +10,10 @@ const Form = ({setNewCar, updateCar}) => {
 
     const [formError, setFormError] = useState({});
 
-    const {register, reset, handleSubmit, formState:{errors}, setValue} = useForm({
-        resolver:joiResolver(carValidator),
+    const {register, reset, handleSubmit, formState: {errors}, setValue} = useForm({
+        resolver: joiResolver(carValidator),
         mode: 'onTouched'
-    })
+    });
 
     useEffect(() => {
         if (updateCar) {
@@ -32,7 +32,7 @@ const Form = ({setNewCar, updateCar}) => {
         } catch (e) {
             setFormError(e.response.data)
         }
-    }
+    };
 
     return (
             <form onSubmit={handleSubmit(submit)} className={css.form}>
