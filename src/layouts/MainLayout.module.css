@@ -1,0 +1,17 @@
+.mainLayout {
+    min-height: 50px;
+    background: darkblue;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.mainLayout a {
+    text-decoration: none;
+    color: #efefef;
+}
+
+.mainLayout a[class='active'] {
+    color: aqua;
+}

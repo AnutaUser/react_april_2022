@@ -2,11 +2,11 @@ import React from 'react';
 
 import css from './Button.module.css';
 
-const Button = ({children}) => {
+const Button = () => {
     return (
-        <Button className={css.button}>
-            {children}
-        </Button>
+        <button className={css.button}>
+
+        </button>
     );
 };
 
