@@ -1,7 +1,13 @@
-.posts {
+.postsAll {
     display: flex;
     width: 50%;
     flex-wrap: wrap;
     row-gap: 5px;
     column-gap: 5px;
+    margin-left: 5px;
+    box-sizing: border-box;
+}
+
+.posts {
+    display: flex;
 }

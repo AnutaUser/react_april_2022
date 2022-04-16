@@ -1,0 +1,16 @@
+.singleUser {
+    border: 2px darkblue solid;
+    padding: 5px;
+}
+
+.singleUser p {
+    margin: 6px;
+}
+
+.singleUserAddress {
+    padding-left: 20px;
+}
+
+.singleUserAddressGeo {
+    padding-left: 40px;
+}

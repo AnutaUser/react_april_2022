@@ -1,3 +1,8 @@
 .user {
-
+    border: 2px solid darkblue;
+    font-size: 30px;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
 }

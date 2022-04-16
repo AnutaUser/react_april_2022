@@ -1,3 +1,18 @@
 .usersPage {
+    display: flex;
+}
 
+.usersPage button {
+    width: 80px;
+    background: darkblue;
+    color: #efefef;
+    margin-top: 0;
+}
+
+.usersPage a {
+    height: 0;
+}
+
+.usersPageMain {
+    width: 50%;
 }
