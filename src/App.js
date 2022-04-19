@@ -1,7 +1,7 @@
 import {Route, Routes} from 'react-router-dom';
 
 import {Layout} from './layouts/Layout';
-import {HomePage, NotFoundPage, PostsPage, UsersPage} from './pages';
+import {HomePage, NotFoundPage, PostsPage, UserDetailsPage, UsersPage} from './pages';
 
 function App() {
 
@@ -12,7 +12,11 @@ function App() {
 
                 <Route path={'/'} element={<HomePage/>}/>
 
-                <Route path={'users'} element={<UsersPage/>}/>
+                <Route path={'users'} element={<UsersPage/>}>
+                    <Route path={':id'} element={<UserDetailsPage/>}>
+                        <Route path={'posts'} element={<PostsPage/>}/>
+                    </Route>
+                </Route>
 
                 <Route path={'posts'} element={<PostsPage/>}/>
 
