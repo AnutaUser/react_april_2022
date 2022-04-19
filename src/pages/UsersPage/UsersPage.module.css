@@ -1,0 +1,8 @@
+.userPage {
+    display: flex;
+    justify-content: space-between;
+}
+
+.allUserPage {
+    width: 50%;
+}

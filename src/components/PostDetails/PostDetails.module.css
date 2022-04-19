@@ -1,0 +1,16 @@
+.postDetails {
+    border: 2px solid black;
+    padding: 5px;
+}
+
+.postDetails h3 {
+    text-align: center;
+}
+
+.postDetails button {
+    background: black;
+    color: #d4d4d4;
+    border-radius: 3px;
+    margin-left: 42%;
+}
+

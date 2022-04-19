@@ -1,0 +1,28 @@
+.userDetails {
+    border: 2px solid black;
+    height: 300px;
+    overflow: scroll;
+}
+
+.userDetails p, h4 {
+    margin: 5px;
+}
+
+.userDetails h3, h4 {
+    text-align: center;
+}
+
+.userDetailsAddress {
+    padding-left: 20px;
+}
+
+.userDetailsAddressGeo {
+    padding-left: 40px;
+}
+
+.userDetails button {
+    background: black;
+    color: #d4d4d4;
+    border-radius: 3px;
+    margin-left: 43%;
+}

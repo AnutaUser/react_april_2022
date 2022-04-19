@@ -1,0 +1,35 @@
+body {
+    margin: 0 auto;
+}
+
+.mainLayout {
+    min-height: 50px;
+    background: black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mainLayout a {
+    text-decoration: none;
+    color: #d4d4d4;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.mainLayout a[class='active'] {
+    color: whitesmoke;
+}
+
+.mainLayoutNav {
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.mainLayoutNav button {
+    background: #d4d4d4;
+    border-radius: 5px;
+    margin-right: 5px;
+}

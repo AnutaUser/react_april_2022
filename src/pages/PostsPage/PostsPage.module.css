@@ -1,0 +1,7 @@
+.postsPage {
+    display: flex;
+    margin-left: 10px;
+}
+.allPostsPage {
+    width: 50%;
+}
