@@ -1,16 +1,18 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-const Post = ({post}) => {
+import css from './Post.module.css';
+
+const Post = ({post, flag}) => {
 
     const {id, title} = post;
 
     return (
-        <div>
+        <div className={css.Post}>
             <div>
                 {id}. {title}
             </div>
-            <Link to={`${id}`} state={post}><button>post details</button></Link>
+            {flag && <Link to={`${id}`} state={post}><button>post details</button></Link>}
         </div>
     );
 };
