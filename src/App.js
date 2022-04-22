@@ -1,5 +1,4 @@
 import React, {useReducer, useState} from 'react';
-
 import {Cat, Dog} from './components';
 
 const reducer = (state, action) => {
@@ -10,8 +9,7 @@ const reducer = (state, action) => {
         case 'addCat':
             return {...state, cats: [...state.cats, {name: payload, id: Date.now()}]};
         case 'delCat':
-            return {...state, cats: state.cats.filter(cat => cat.id !== payload)}
-
+            return {...state, cats: state.cats.filter(cat => cat.id !== payload)};
         case 'addDog':
             return {...state, dogs: [...state.dogs, {name: payload, id: Date.now()}]};
         case 'delDog':
@@ -26,40 +24,40 @@ const App = () => {
     const [catValue, setCatValue] = useState('');
     const [dogValue, setDogValue] = useState('');
 
-    const createCat = () => {
+    const createNewCat = () => {
         dispatch({type: 'addCat', payload: catValue});
         setCatValue('');
     };
 
-    const createDog = () => {
+    const createNewDog = () => {
         dispatch({type: 'addDog', payload: dogValue});
         setDogValue('');
     };
 
+
     return (
         <div>
-
-            <div>
-                <div>
+            <div style={{display:'flex', justifyContent:'center', margin: '20px'}}>
+                <div style={{marginRight: '20px'}}>
                     <label>Add new cat: <input type="text" onChange={({target}) => setCatValue(target.value)}
-                                               value={catValue} placeholder={'New cat'}/></label>
-                    <button onClick={() => createCat()}>Save</button>
+                                               value={catValue} placeholder={'cat'}/></label>
+                    <button onClick={() => createNewCat()}>SAVE</button>
                 </div>
                 <div>
                     <label>Add new dog: <input type="text" onChange={({target}) => setDogValue(target.value)}
-                                               value={dogValue} placeholder={'New dog'}/></label>
-                    <button onClick={() => createDog()}>Save</button>
+                                               value={dogValue} placeholder={'dog'}/></label>
+                    <button onClick={() => createNewDog()}>SAVE</button>
                 </div>
             </div>
 
-            <hr/>
+            <hr style={{height:'5px', background:'grey'}}/>
 
-            <div>
-                <div>
+            <div style={{display:'flex', justifyContent:'center',}}>
+                <div style={{width: '200px'}}>
                     {state.cats.map(cat => <Cat key={cat.id} cat={cat} dispatch={dispatch}/>)}
                 </div>
-                <div>
-                    {state.dogs.map(dog => <Dog key={dog.id} dog={dog} dispatch={dispatch}/>)}
+                <div style={{width: '200px'}}>
+                    {state.dogs.map(dog=> <Dog key={dog.id} dog={dog} dispatch={dispatch}/>)}
                 </div>
             </div>
 
