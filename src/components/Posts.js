@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {loadPosts} from '../redux/actions';
+import {loadPosts} from '../redux/actions.creator';
 
 const Posts = () => {
 
@@ -10,11 +10,7 @@ const Posts = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(value => value.json())
-            .then(posts => {
-                loadPosts(posts, dispatch);
-            });
+        dispatch(loadPosts());
     }, []);
 
     return (

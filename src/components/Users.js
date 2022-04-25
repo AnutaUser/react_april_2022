@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {loadUsers} from '../redux/actions';
+import {loadUsers} from '../redux/actions.creator';
 
 const Users = () => {
 
@@ -10,11 +10,7 @@ const Users = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(value => value.json())
-            .then(users => {
-                loadUsers(users, dispatch)
-            });
+        dispatch(loadUsers());
     }, []);
 
     return (
