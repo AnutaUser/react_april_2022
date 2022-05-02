@@ -1,23 +1,16 @@
 import React from 'react';
-import {useDispatch} from 'react-redux';
 
-import {carActions} from '../../redax/slices/car.slice';
+import {Link} from 'react-router-dom';
 
 const Car = ({car}) => {
 
-    const {id,model, price, year} = car;
-
-    const dispatch = useDispatch();
-
-    const deleteByID = () => {
-        dispatch(carActions.deleteCars({id}));
-    };
+    const {id,model, price} = car;
 
     return (
         <div>
-            {id} -- {model} -- {price} -- {year}
-            <button onClick={() => deleteByID()}>delete</button>
-            <button onClick={() => dispatch(carActions.setForUpdateById({car}))}>update</button>
+            {id} -- {model} -- {price}
+            <Link to={`${id}`} state={car}><button>car details</button></Link>
+
         </div>
     );
 };
