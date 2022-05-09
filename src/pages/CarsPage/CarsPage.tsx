@@ -3,15 +3,17 @@ import {Outlet} from "react-router-dom";
 
 import {CarForm, Cars} from "../../components";
 
-const CarPage:FC = () => {
+const CarsPage:FC = () => {
     return (
         <div>
             <CarForm/>
-                <hr/>
-            <Cars/>
-            <Outlet/>
+            <hr/>
+            <div>
+                <Cars/>
+                <Outlet/>
+            </div>
         </div>
     );
 };
 
-export {CarPage};
+export {CarsPage};

@@ -20,4 +20,6 @@ export type {
     AppDispatch
 };
 
-export {setupStore};
+export {
+    setupStore
+};

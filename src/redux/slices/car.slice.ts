@@ -1,53 +1,66 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 
-import {ICar} from "../../interfaaces";
+import {ICar} from "../../interfaces";
 import {carService} from "../../services";
 
-interface IStore {
-    cars: ICar[]
+interface IState {
+    cars: ICar[];
 }
 
-const initialState:IStore = {
-    cars:[]
+const initialState:IState = {
+    cars: []
 }
 
-const getAll = createAsyncThunk<ICar[], void>(
-    'carSlice/getAll',
+const getAllCars = createAsyncThunk<ICar[], void>(
+    'carSlice/getAllCars',
     async () => {
         const {data} = await carService.getAll();
         return data;
     }
 );
 
-const create = createAsyncThunk<ICar, { car: ICar }>(
-    'carSlice/create',
+const createCar = createAsyncThunk<ICar, { car:ICar }>(
+    'carSlice/createCar',
     async ({car}) => {
         const {data} = await carService.create(car);
         return data;
     }
 );
 
+const deleteCar = createAsyncThunk<void, {id:string}>(
+    'carSlice/deleteCar',
+    async ({id},{dispatch}) => {
+        await carService.delete(id);
+        dispatch(deleteById({id}));
+    }
+);
 
 const carSlice = createSlice({
     name: 'carSlice',
     initialState,
-    reducers:{},
-    extraReducers:(builder => {
+    reducers: {
+        deleteById: (state, action) => {
+            const index = state.cars.findIndex(value => value.id === action.payload.id);
+            state.cars.splice(index, 1);
+        }
+    },
+    extraReducers: (builder => {
         builder
-            .addCase(getAll.fulfilled, (state, action) => {
+            .addCase(getAllCars.fulfilled, (state, action) => {
                 state.cars = action.payload;
             })
-            .addCase(create.fulfilled, (state, action) => {
+            .addCase(createCar.fulfilled, (state, action) => {
                 state.cars.push(action.payload);
             })
     })
 });
 
-const {reducer:carReducer} = carSlice;
+const {reducer: carReducer, actions:{deleteById}} = carSlice;
 
-const carActions = {getAll, create, };
+const carActions = {getAllCars, createCar, deleteCar, };
 
 export {
     carReducer,
-    carActions
+    carActions,
+    deleteById
 };

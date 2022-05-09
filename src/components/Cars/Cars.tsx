@@ -1,8 +1,8 @@
 import React, {FC, useEffect} from 'react';
 
 import {useAppDispatch, useAppSelector} from "../../hooks";
-import {Car} from "../Car/Car";
 import {carActions} from "../../redux";
+import {Car} from "../Car/Car";
 
 const Cars:FC = () => {
 
@@ -10,12 +10,14 @@ const Cars:FC = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(carActions.getAll());
+        dispatch(carActions.getAllCars())
     }, [dispatch]);
 
     return (
-        <div style={{display:'flex', flexWrap: 'wrap', justifyContent: 'space-evenly'}}>
-            {cars.map(car => <Car key={car.id} car={car}/>)}
+        <div>
+            {
+                cars.map(car => <Car key={car.id} car={car}/>)
+            }
         </div>
     );
 };
